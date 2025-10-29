@@ -7,6 +7,21 @@ cache_dir = './.cache'
 requirements = []
 [contracts.basics]
 path = 'contracts/basics.clar'
+clarity_version = 1
+epoch = '2.05'
+
+[contracts.smart-claimant]
+path = 'contracts/smart-claimant.clar'
+clarity_version = 3
+epoch = 'latest'
+
+[contracts.timelocked-wallet]
+path = 'contracts/timelocked-wallet.clar'
+clarity_version = 3
+epoch = 'latest'
+
+[contracts.voting-dao]
+path = 'contracts/voting-dao.clar'
 clarity_version = 3
 epoch = 'latest'
 [repl.analysis]
