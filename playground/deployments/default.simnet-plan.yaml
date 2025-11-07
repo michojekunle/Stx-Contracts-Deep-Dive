@@ -67,5 +67,23 @@ plan:
             contract-name: basics
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/basics.clar
+            clarity-version: 1
+      epoch: "2.05"
+    - id: 1
+      transactions:
+        - emulated-contract-publish:
+            contract-name: multisig-vault
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/multisig-vault.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: timelocked-wallet
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/timelocked-wallet.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: smart-claimant
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/smart-claimant.clar
             clarity-version: 3
       epoch: "3.2"
