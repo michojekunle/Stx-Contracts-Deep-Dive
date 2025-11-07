@@ -7,8 +7,6 @@ const address1 = accounts.get("wallet_1")!;
 const address2 = accounts.get("wallet_2")!;
 const address3 = accounts.get("wallet_3")!;
 const address4 = accounts.get("wallet_4")!;
-const address5 = accounts.get("wallet_5")!;
-
 /*
   The test below is an example. To learn more, read the testing documentation here:
   https://docs.hiro.so/stacks/clarinet-js-sdk
