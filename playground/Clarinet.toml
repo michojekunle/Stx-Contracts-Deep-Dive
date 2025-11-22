@@ -5,13 +5,61 @@ authors = []
 telemetry = false
 cache_dir = './.cache'
 requirements = []
+
+# TRAITS FIRST (dependencies)
+[contracts.sip-009-nft-trait]
+path = 'contracts/traits/sip-009-nft-trait.clar'
+clarity_version = 3
+epoch = 'latest'
+
+[contracts.sip-010-ft-trait]
+path = 'contracts/traits/sip-010-ft-trait.clar'
+clarity_version = 3
+epoch = 'latest'
+
+[contracts.sip013-sft-trait]
+path = 'contracts/traits/sip-013-sft-trait.clar'
+clarity_version = 3
+epoch = '3.0'
+
+[contracts.sip013-transfer-many-trait]
+path = 'contracts/traits/sip-013-transfer-many-trait.clar'
+clarity_version = 3
+epoch = '3.0'
+
+# THEN contracts that depend on traits
 [contracts.basics]
 path = 'contracts/basics.clar'
 clarity_version = 1
 epoch = '2.05'
 
+[contracts.dice-game]
+path = 'contracts/dice-game.clar'
+clarity_version = 3
+epoch = 'latest'
+
 [contracts.multisig-vault]
 path = 'contracts/multisig-vault.clar'
+clarity_version = 3
+epoch = 'latest'
+
+[contracts.test-nft]
+path = "contracts/test-nft.clar"
+clarity_version = 3
+epoch = 'latest'
+
+[contracts.nft-auction]
+path = 'contracts/nft-auction.clar'
+clarity_version = 3
+epoch = 'latest'
+
+[contracts.nft-marketplace]
+path = 'contracts/nft-marketplace.clar'
+clarity_version = 3
+epoch = 'latest'
+
+[contracts.semi-fungible-token]
+path = 'contracts/semi-fungible-token.clar'
 clarity_version = 3
 epoch = 'latest'
 
@@ -24,6 +72,7 @@ epoch = 'latest'
 path = 'contracts/timelocked-wallet.clar'
 clarity_version = 3
 epoch = 'latest'
+
 [repl.analysis]
 passes = ['check_checker']
 
