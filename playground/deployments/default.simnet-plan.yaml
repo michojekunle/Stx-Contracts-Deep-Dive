@@ -68,13 +68,56 @@ plan:
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/basics.clar
             clarity-version: 1
-      epoch: "2.05"
+      epoch: "2.1"
     - id: 1
       transactions:
+        - emulated-contract-publish:
+            contract-name: sip013-sft-trait
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/traits/sip-013-sft-trait.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: sip013-transfer-many-trait
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/traits/sip-013-transfer-many-trait.clar
+            clarity-version: 3
+      epoch: "3.0"
+    - id: 2
+      transactions:
+        - emulated-contract-publish:
+            contract-name: dice-game
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/dice-game.clar
+            clarity-version: 3
         - emulated-contract-publish:
             contract-name: multisig-vault
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/multisig-vault.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: sip-009-nft-trait
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/traits/sip-009-nft-trait.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: nft-auction
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/nft-auction.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: sip-010-ft-trait
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/traits/sip-010-ft-trait.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: nft-marketplace
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/nft-marketplace.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: semi-fungible-token
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/semi-fungible-token.clar
             clarity-version: 3
         - emulated-contract-publish:
             contract-name: timelocked-wallet
@@ -85,5 +128,10 @@ plan:
             contract-name: smart-claimant
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/smart-claimant.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: test-nft
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/test-nft.clar
             clarity-version: 3
       epoch: "3.2"

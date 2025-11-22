@@ -3,6 +3,12 @@
 ;; summary:
 ;; description:
 
+;; traits
+;;
+
+;; token definitions
+;;
+
 ;; constants
 ;; owner
 (define-constant contract-owner tx-sender)
@@ -34,7 +40,7 @@
     (begin
         (asserts! (is-eq tx-sender contract-owner) err-owner-only)
         (asserts! (is-none (var-get beneficiary)) err-already-locked)
-        (asserts! (> stacks-block-height unlock-at) err-unlock-in-the-past)
+        (asserts! (> unlock-at stacks-block-height) err-unlock-in-the-past)
         (asserts! (> amount u0) err-no-value)
         (asserts! (not (is-none (some new-beneficiary))) err-invalid-beneficiary)
         (try! (stx-transfer? amount tx-sender (as-contract tx-sender)))
@@ -47,7 +53,7 @@
 ;; bestow
 (define-public (bestow (new-beneficiary principal))
     (begin
-        (asserts! (is-eq (some tx-sender) (some new-beneficiary))
+        (asserts! (is-eq (some tx-sender) (var-get beneficiary))
             err-beneficiary-only
         )
         (var-set beneficiary (some new-beneficiary))
@@ -61,7 +67,7 @@
         (asserts! (is-eq (some tx-sender) (var-get beneficiary))
             err-beneficiary-only
         )
-        (asserts! (>= burn-block-height (var-get unlock-height))
+        (asserts! (>= stacks-block-height (var-get unlock-height))
             err-unlock-height-not-reached
         )
         (as-contract (stx-transfer? (stx-get-balance tx-sender) tx-sender
